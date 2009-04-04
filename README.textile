@@ -1,0 +1,19 @@
+A Django application which provides a front end to one or more Google Calendars. After entering account details the application provides a management command to import all calendars and events for that user.
+
+<pre>./manage.py import_calendards</pre>
+
+h2. Credits
+
+Much of the Google Calendar specific code is based on "Django-Google":http://code.google.com/p/django-google/ which appears to be an orphaned project. Most of the code has been modified in some way, partly to tidy up the admin interface and bring it up to working with Django 1.0 and party to make it work.
+
+h2. Depends
+
+The application depends on at least Django 1.0 and uses the "gdata module":http://pypi.python.org/pypi/gdata/1.3.0 available fomr PyPi.
+
+h2. Todo
+
+I'm throwing this up before doing more tidying, which means I still need to:
+
+* Write tests
+* Add lots of comments
+* Add views and templates to show the calendar
