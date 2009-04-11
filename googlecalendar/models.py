@@ -57,11 +57,12 @@ class Event(models.Model):
 	objects = EventManager()
 	uri = models.CharField(max_length = 255, unique = True)
 	calendar = models.ForeignKey(Calendar)
-	title = models.CharField(max_length  =255)
+	title = models.CharField(max_length = 255)
 	edit_uri = models.CharField(max_length = 255)
 	view_uri = models.CharField(max_length = 255)
 	content = models.TextField(blank = True)
 	start_time = models.DateTimeField()
 	end_time = models.DateTimeField()
+	where = models.CharField(max_length = 255)
 	def __unicode__(self):
 		return u'%s' % (self.title)

@@ -79,3 +79,8 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'googlecalendar',
 )
+
+# name of calendars you want to import
+CALENDAR_NAMES = [
+    'Cambridge Geek Events',
+]

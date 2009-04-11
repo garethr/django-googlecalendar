@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from django.db.models import Manager
 
 from utils import parse_date_w3dtf
@@ -29,7 +31,10 @@ class EventManager(Manager):
             result.uri = uri
         result.title = data.title.text or ''
         result.content = data.content.text or ''
-
+        try:
+            result.where = data.where[0].value_string
+        except IndexError:
+            pass
         try:
             result.start_time = parse_date_w3dtf(data.when[0].start_time)
             result.end_time = parse_date_w3dtf(data.when[0].end_time)
